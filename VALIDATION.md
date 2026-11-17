@@ -11,8 +11,9 @@
 
 Local environment installation was attempted using official PyPI and an alternate mirror. SSL failures/timeouts prevented installing the scientific stack. Full training and numerical agreement with the publication have therefore not been verified locally.
 
-The GitHub Actions workflow runs both portfolio plotting configurations, multitask plotting, a short multitask reference optimization and a two-epoch portfolio training check. Check the workflow status for runtime results. These checks do not certify the long training runs or global optimality of worst-case searches.
+GitHub Actions passed on commit `cec8c6a`: both portfolio plotting configurations, multitask plotting, a short multitask reference optimization, a two-epoch portfolio training check, and bundle validation. Run: https://github.com/Cumberkid/learn-optimization-proxy/actions/runs/44086601788 . Generated figures are available as the `reproduction-figures` workflow artifact. These checks do not certify the long training runs or global optimality of worst-case searches.
 
 ## Remaining author checks
 
 Confirm Fourier adaptive threshold 7 versus the comment suggesting 5 against the final manuscript figure. The prepared bundle follows the executable notebook selector. The environment file is a historical version target, not a recovered exact package lock. Full IPOPT evaluations and all long SAVIO runs remain to be rerun in a suitable environment.
+

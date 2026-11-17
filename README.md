@@ -4,6 +4,8 @@ Reproducibility code for the numerical experiments in *Learning Optimization Pro
 
 The submission contains two experiments: portfolio allocation in Euclidean geometry, and multitask D-optimal design in Bregman geometry. The portfolio worst-case-gap experiment is included for the appendix. Historical Legendre, basis-expansion and steepest-descent experiments are outside this submission.
 
+On Windows, long result-directory names may require cloning with `git -c core.longpaths=true clone https://github.com/Cumberkid/learn-optimization-proxy.git`.
+
 ## Environment
 
 For full reproduction, including the IPOPT-based multitask worst-case-gap search:
@@ -62,3 +64,4 @@ This prints commands by default; add `--execute` to run them. New training resul
 - `VALIDATION.md`: checks actually performed and their limits.
 
 Training can overwrite CSVs in its working directory. Keep a fresh checkout of the reference results if comparing a new run. Numerical worst-case gaps are estimates from nonconvex searches, not certified global maxima. Floating-point results and clustering can vary across library versions/platforms. See LICENSE for the code license; source data retain their original terms.
+
