@@ -1,4 +1,4 @@
-﻿"""Execute the curated notebooks with explicit working directories."""
+"""Execute the curated notebooks with explicit working directories."""
 from pathlib import Path
 import argparse, json, os
 ROOT=Path(__file__).resolve().parents[1]
@@ -36,6 +36,7 @@ for i,c in enumerate(json.loads((folder/name).read_text(encoding='utf-8'))['cell
  exec(compile(src,str(folder/name)+f':cell{i}','exec'),ns)
  if a.experiment=='multitask-smoke': ns.update(T=2,n_eval=2)
  if a.experiment=='portfolio-plots' and 'results_dir_override = None' in src:
+  # Threshold 7 matches the manuscript event markers (docs/FOURIER_THRESHOLD.md).
   ns.update(basis=a.basis,adaptive_threshold_ref=7,adaptive_threshold_alpha=0.1)
   if a.basis=='random_relu': ns.update(selected_gamma_indices=[0,4,6,9],adaptive_gamma_start=368.15625,adaptive_max_epochs_per_value=5000,max_epoch=10000)
   else: ns.update(selected_gamma_indices=[0,7,9,12],adaptive_gamma_start=89.25,adaptive_max_epochs_per_value=500,max_epoch=500)

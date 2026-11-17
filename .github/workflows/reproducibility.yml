@@ -10,6 +10,7 @@ jobs:
           python-version: '3.11'
       - run: pip install numpy pandas scipy matplotlib scikit-learn torch
       - run: python tools/validate_bundle.py
+      - run: python tools/verify_fourier_threshold.py
       - run: python experiments/portfolio/scripts/run_gamma_experiment.py --help
       - run: python tools/run_notebook.py portfolio-plots --basis random_fourier
       - run: python tools/run_notebook.py portfolio-plots --basis random_relu
@@ -21,3 +22,4 @@ jobs:
         with:
           name: reproduction-figures
           path: figures/
+

@@ -1,0 +1,76 @@
+{
+  "manuscript_reference": "6_numerics.tex, fig:portfolio_fourier_expected",
+  "figure": "docs/reference_figures/unreg_objective_portfolio_val_fourier.png",
+  "figure_sha256": "90d173ca9237cf08bcf3b97aeb3185f6e09b9de146367ae1a2349dfbe9844dea",
+  "extraction": {
+    "method": "Gray vertical dotted-line columns (RGB equal, channel 60..140, more than 160 matching pixels at y=15..949); adjacent columns grouped by center.",
+    "axes_left_px": 490,
+    "axes_right_px": 2107,
+    "epoch_min": 0,
+    "epoch_max": 500,
+    "event_pixel_centers": [
+      502.5,
+      515.5,
+      528.5,
+      541.5,
+      560.5,
+      573.5,
+      586.5,
+      599.5,
+      651.5,
+      702.5,
+      719.5,
+      744.5,
+      974.5,
+      1023.5,
+      1065.5,
+      1100.5,
+      2096.5
+    ],
+    "tolerance_epochs": 0.5
+  },
+  "candidates": {
+    "5": {
+      "visible_event_epochs": [
+        14,
+        19,
+        25,
+        29,
+        34,
+        53,
+        66,
+        79,
+        150,
+        165,
+        178,
+        497
+      ],
+      "event_csv_sha256": "d73d0594ff249144182d0bb589bfbfc759444d778cabc6d28c236607b213179b",
+      "event_csv_sha256_lf": "d73d0594ff249144182d0bb589bfbfc759444d778cabc6d28c236607b213179b"
+    },
+    "7": {
+      "visible_event_epochs": [
+        4,
+        8,
+        12,
+        16,
+        22,
+        26,
+        30,
+        34,
+        50,
+        66,
+        71,
+        79,
+        150,
+        165,
+        178,
+        189,
+        497
+      ],
+      "event_csv_sha256": "ca5d35719943eec267d3cdfff963cdc541d2ac733bddbf775a7eb4dfbb15b49d",
+      "event_csv_sha256_lf": "ca5d35719943eec267d3cdfff963cdc541d2ac733bddbf775a7eb4dfbb15b49d"
+    }
+  },
+  "confirmed_threshold_ref": 7
+}

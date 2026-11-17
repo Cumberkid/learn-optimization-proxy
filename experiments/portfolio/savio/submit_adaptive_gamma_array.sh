@@ -5,7 +5,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=1
 #SBATCH --time=12:00:00
-#SBATCH --array=0-11
+#SBATCH --array=0-0
 #SBATCH --output=adaptive_gamma_sgd_%A_task_%a.out
 #SBATCH --error=adaptive_gamma_sgd_%A_task_%a.err
 #SBATCH --export=NONE
@@ -147,3 +147,4 @@ if [[ -n "${MAX_EPOCHS_PER_GAMMA}" ]]; then
 fi
 
 "${CMD[@]}"
+

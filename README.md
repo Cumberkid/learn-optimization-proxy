@@ -1,4 +1,4 @@
-﻿# Learning Optimization Proxies
+# Learning Optimization Proxies
 
 Reproducibility code for the numerical experiments in *Learning Optimization Proxies* (INFORMS manuscript).
 
@@ -27,7 +27,7 @@ python tools/run_notebook.py portfolio-plots --basis random_relu
 python tools/run_notebook.py multitask-plots
 ```
 
-Figures are saved under `figures/`. The runner sets each notebook's working directory and exports every displayed figure in cell order. It retains the original plotting calculations and styles. See `REPRODUCIBILITY.md` for the paper-to-code mapping and configuration choices.
+Figures are saved under `figures/`. The runner sets each notebook's working directory and exports every displayed figure in cell order. It retains the original plotting calculations and styles. See `REPRODUCIBILITY.md` for the paper-to-code mapping and configuration choices. The Fourier adaptive threshold reference is **7**, confirmed against the manuscript figure; see [the figure audit](docs/FOURIER_THRESHOLD.md).
 
 ## Rerun experiments
 

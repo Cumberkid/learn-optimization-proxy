@@ -1,4 +1,4 @@
-﻿"""Generate/rerun portfolio training commands from recorded metadata."""
+"""Generate/rerun portfolio training commands from recorded metadata."""
 from pathlib import Path
 import argparse,json,subprocess,sys,shlex
 R=Path(__file__).resolve().parents[1]
@@ -15,7 +15,7 @@ for f in sorted((P/'results').glob('*/**/summary.json')):
  ag=j.get('adaptive_gamma',{})
  if ag.get('enabled'):
   cmd.append('--adaptive-gamma')
-  fields={'start_gamma':'adaptive-gamma-start','shrink':'adaptive-gamma-shrink','saturation_metric':'adaptive-gamma-saturation-metric','saturation_threshold_ref':'adaptive-gamma-saturation-threshold','saturation_threshold_alpha':'adaptive-gamma-threshold-alpha','saturation_threshold_scale_min':'adaptive-gamma-threshold-scale-min','saturation_threshold_scale_max':'adaptive-gamma-threshold-scale-max','max_epochs_per_value':'adaptive-gamma-max-epochs-per-value','window':'adaptive-gamma-window','lipschitz_L':'adaptive-l','lipschitz_C':'adaptive-c'}
+  fields={'start_gamma':'adaptive-gamma-start','shrink':'adaptive-gamma-shrink','saturation_metric':'adaptive-gamma-saturation-metric','saturation_threshold_ref':'adaptive-gamma-saturation-threshold','saturation_threshold_alpha':'adaptive-gamma-threshold-alpha','saturation_threshold_scale_min':'adaptive-gamma-threshold-scale-min','saturation_threshold_scale_max':'adaptive-gamma-threshold-scale-max','max_epochs_per_value':'adaptive-gamma-max-epochs-per-value','window':'adaptive-gamma-window','lipschitz_L':'adaptive-l','lipschitz_C':'adaptive-lr-c'}
   for k,opt in fields.items():
    if ag.get(k) is not None: cmd.extend(['--'+opt,str(ag[k])])
  out=R/'validation-output/replayed'/f.parent.parent.name
