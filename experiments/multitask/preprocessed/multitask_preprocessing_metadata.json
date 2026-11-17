@@ -1,0 +1,53 @@
+{
+  "seed": 7,
+  "source_csv": "AmesHousing.csv",
+  "n_rows_after_cleaning_before_clustering": 2930,
+  "n_communities": 20,
+  "n_design_points": 20,
+  "cluster_size_min": 3,
+  "cluster_size_max": 344,
+  "cluster_inertia_standardized": 14439.105886362153,
+  "task_names": [
+    "SalePrice",
+    "GrLivArea",
+    "GarageArea",
+    "TotalBsmtSF"
+  ],
+  "task_features": {
+    "SalePrice": [
+      "OverallQual",
+      "GrLivArea",
+      "GarageCars",
+      "TotalBsmtSF",
+      "YearBuilt"
+    ],
+    "GrLivArea": [
+      "TotRmsAbvGrd",
+      "BedroomAbvGr",
+      "FullBath",
+      "FirstFlrSF",
+      "SecondFlrSF"
+    ],
+    "GarageArea": [
+      "GarageCars",
+      "OverallQual",
+      "YearBuilt",
+      "LotArea",
+      "Fireplaces"
+    ],
+    "TotalBsmtSF": [
+      "LotArea",
+      "YearBuilt",
+      "FirstFlrSF",
+      "OverallQual",
+      "OverallCond"
+    ]
+  },
+  "artifacts": {
+    "community_means_csv": "preprocessed\\multitask_community_means.csv",
+    "community_sizes_csv": "preprocessed\\multitask_community_sizes.csv",
+    "design_matrices_npz": "preprocessed\\multitask_design_matrices.npz",
+    "summary_csv": "preprocessed\\multitask_preprocessing_summary.csv",
+    "missing_values_csv": "preprocessed\\multitask_missing_values_before_imputation.csv"
+  }
+}

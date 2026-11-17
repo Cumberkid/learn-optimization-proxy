@@ -1,0 +1,5 @@
+task,n_design_points,n_features_with_intercept
+SalePrice,20,6
+GrLivArea,20,6
+GarageArea,20,6
+TotalBsmtSF,20,6

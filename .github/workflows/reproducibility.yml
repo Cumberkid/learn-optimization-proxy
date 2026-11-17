@@ -1,0 +1,23 @@
+﻿name: Reproducibility checks
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy pandas scipy matplotlib scikit-learn torch
+      - run: python tools/validate_bundle.py
+      - run: python experiments/portfolio/scripts/run_gamma_experiment.py --help
+      - run: python tools/run_notebook.py portfolio-plots --basis random_fourier
+      - run: python tools/run_notebook.py portfolio-plots --basis random_relu
+      - run: python tools/run_notebook.py multitask-plots
+      - run: python tools/run_notebook.py multitask-smoke
+      - run: python experiments/portfolio/scripts/run_gamma_experiment.py --basis random_fourier --basis-dim 64 --init-scale 0.025 --gamma 89.25 --epochs 2 --record-frequency 1 --out-dir validation-output/portfolio-smoke
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reproduction-figures
+          path: figures/

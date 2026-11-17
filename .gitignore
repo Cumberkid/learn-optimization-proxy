@@ -1,0 +1,9 @@
+﻿.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+figures/
+validation-output/
+*.out
+*.err
+.DS_Store
